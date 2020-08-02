@@ -1,0 +1,160 @@
+{
+  "id": "6988fc7d-5df2-4f9c-adbd-71f173aa0b68",
+  "version": "2.0",
+  "name": "Salesforce",
+  "url": "https://nagsftest-dev-ed.my.salesforce.com",
+  "tests": [{
+    "id": "29f8df68-40ea-4287-a689-b0e7cc78206d",
+    "name": "Test1",
+    "commands": [{
+      "id": "54e211bd-32c4-44c6-b43a-38d29770c86e",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f8f1fe3f-7567-4e68-bfb7-2b76c349dbbc",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1024x768",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d22c8d07-5d2d-49a6-92ed-c207ff5d64be",
+      "comment": "",
+      "command": "eyesSetViewportSize",
+      "target": "1024x768",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2e155de2-7481-4ef7-8ed4-2d8dfc265652",
+      "comment": "",
+      "command": "click",
+      "target": "id=username",
+      "targets": [
+        ["id=username", "id"],
+        ["name=username", "name"],
+        ["css=#username", "css:finder"],
+        ["xpath=//input[@id='username']", "xpath:attributes"],
+        ["xpath=//div[@id='username_container']/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2c438272-8f0f-494f-964c-4c8b9c0134cb",
+      "comment": "",
+      "command": "type",
+      "target": "id=username",
+      "targets": [
+        ["id=username", "id"],
+        ["name=username", "name"],
+        ["css=#username", "css:finder"],
+        ["xpath=//input[@id='username']", "xpath:attributes"],
+        ["xpath=//div[@id='username_container']/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "nag@nznetwork.com"
+    }, {
+      "id": "21ae9eb1-6079-42aa-b819-d85139cb5c9c",
+      "comment": "",
+      "command": "click",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=pw", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//form[@id='login_form']/input", "xpath:idRelative"],
+        ["xpath=//form/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "41d7ed25-5593-4719-af70-3faaec6b4cb3",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=pw", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//form[@id='login_form']/input", "xpath:idRelative"],
+        ["xpath=//form/input", "xpath:position"]
+      ],
+      "value": "Salesforce1234"
+    }, {
+      "id": "38d21aef-df10-41c3-962b-c2e7e3603b1b",
+      "comment": "",
+      "command": "click",
+      "target": "id=Login",
+      "targets": [
+        ["id=Login", "id"],
+        ["name=Login", "name"],
+        ["css=#Login", "css:finder"],
+        ["xpath=//input[@id='Login']", "xpath:attributes"],
+        ["xpath=//form[@id='login_form']/input[2]", "xpath:idRelative"],
+        ["xpath=//form/input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5c968e53-4fc8-4d7a-a327-b300d15601ce",
+      "comment": "",
+      "command": "eyesCheckWindow",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "bc2ed752-0d3a-48f4-96b3-011321ce7e65",
+      "comment": "",
+      "command": "eyesCheckWindow",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "506cde39-2509-492e-9e6f-be71f7788f36",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["29f8df68-40ea-4287-a689-b0e7cc78206d"]
+  }],
+  "urls": ["https://nagsftest-dev-ed.my.salesforce.com/"],
+  "plugins": [{
+    "id": "fbnkflkahhlmhdgkddaafgnnokifobik",
+    "name": "Applitools",
+    "version": "1.0.0"
+  }],
+  "snapshot": {
+    "globalConfig": {
+      "snapshot": "const { Eyes, Target } = require('@applitools/eyes-selenium');global.Target = Target;const { ConsoleLogHandler, BatchInfo } = require('@applitools/eyes-sdk-core');let apiKey = process.env.APPLITOOLS_API_KEY, serverUrl = process.env.APPLITOOLS_SERVER_URL, appName = \"Salesforce\", batchId = configuration.runId, batchName;"
+    },
+    "suites": [{
+      "name": "Default Suite",
+      "persistSession": false,
+      "snapshot": {
+        "hook": "beforeAll(async () => {batchName = \"Default Suite\";});beforeEach(async () => {global.eyes = Eyes.fromBrowserInfo(serverUrl, configuration.params.eyesDisabled, configuration.params.eyesRendering ? { browser: configuration.params.eyesRendering } : undefined);eyes.setApiKey(apiKey);eyes.getBaseAgentId = () => (\"eyes.seleniumide.runner.\" + (eyes._isVisualGrid ? \"visualgrid\" : \"local\") + \"/1.10.0\");eyes.setAgentId(\"eyes.seleniumide.runner.\" + (eyes._isVisualGrid ? \"visualgrid\" : \"local\") + \"/1.10.0\");eyes.setBatch(new BatchInfo(batchName, undefined, batchId));if(!eyes._isVisualGrid){eyes.setHideScrollbars(true);eyes.setStitchMode(\"CSS\");}eyes.setSendDom(configuration.params.eyesDomUploadEnabled === undefined ? true : configuration.params.eyesDomUploadEnabled);if (configuration.params.eyesLogsEnabled) {eyes.setLogHandler(new ConsoleLogHandler(true));}});afterEach(async () => {if (eyes._isOpen) {eyes.getEyesRunner ? await eyes.getEyesRunner().getAllResults() : await eyes.close();}});"
+      }
+    }],
+    "tests": [{
+      "id": "29f8df68-40ea-4287-a689-b0e7cc78206d",
+      "snapshot": {
+        "commands": {
+          "d22c8d07-5d2d-49a6-92ed-c207ff5d64be": "await eyes.setViewportSize({width: 1024, height: 768});",
+          "5c968e53-4fc8-4d7a-a327-b300d15601ce": "if (!opts.isNested) {await eyes.check(\"\" || (new URL(await driver.getCurrentUrl())).pathname, Target.window().webHook(preRenderHook).accessibilityValidation(configuration.params.eyesAccessibilityLevel || \"None\").fully(true));}",
+          "bc2ed752-0d3a-48f4-96b3-011321ce7e65": "if (!opts.isNested) {await eyes.check(\"\" || (new URL(await driver.getCurrentUrl())).pathname, Target.window().webHook(preRenderHook).accessibilityValidation(configuration.params.eyesAccessibilityLevel || \"None\").fully(true));}"
+        },
+        "setupHooks": ["const _driver = driver;driver = await eyes.open(driver, appName, \"Test1\");global.preRenderHook = \"\";"],
+        "teardownHooks": ["driver = _driver;"]
+      }
+    }]
+  },
+  "dependencies": {
+    "@applitools/eyes-selenium": "4.33.8"
+  },
+  "jest": {
+    "extraGlobals": ["Math"]
+  }
+}
