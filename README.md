@@ -1,2 +1,2 @@
-# VisualAutomationOnSalesforce
-Automating Salesforce with Applitools
+# ShadowDomAutomation
+Techniques to autmate apps implemented on shadow dom
